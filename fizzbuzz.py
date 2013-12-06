@@ -1,4 +1,4 @@
-import arcpy
+#this better work...zen mode inside github
 import os, string, sys, traceback
 from os.path import join
 
