@@ -23,6 +23,7 @@ import string
 import sys
 import traceback
 from os.path import join
+import arceditor
 
 sys.path.append(r"\\192.168.201.11\gis\Users\Justin_Perez\EXPTools\Scripts")
 import expFuncs as eF
@@ -173,11 +174,12 @@ def CalcGUIDO():
             yield row_dict
 
 
-    def cursor_field_parameter_helper(self, special_cursor_token):
+    def cursor_field_parameter_helper(self, special_cursor_token=None):
         cursor_field_list = []
         for i in self.fieldlist:
             cursor_field_list.append(str(i.name))
-        cursor_field_list.append(special_cursor_token)
+        if special_cursor_token is not None:
+            cursor_field_list.append(special_cursor_token)
         return cursor_field_list
 
 
@@ -399,6 +401,7 @@ class ESRI_FolderBrowser(object):
             for f in filelist:
                     featureclasslist.append(f)
         return featureclasslist
+
 
 
 
